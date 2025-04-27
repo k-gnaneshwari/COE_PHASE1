@@ -1,0 +1,174 @@
+#problems using while loop:
+#1.find number of digits
+num=5632
+count=0
+sum=0
+while num!=0:
+    rem=num%10
+    count+=1
+    num=num//10
+    sum+=rem
+print(count)
+print(sum)
+     
+
+#2.number of odd and even digits
+#sum of odd and even digits
+num=765831
+ecount=0
+esum=0
+ocount=0
+osum=0
+rem=0
+while num!=0:
+     rem=num%10
+     if rem%2==0:
+         ecount+=1
+         esum+=rem
+     else:
+         ocount+=1
+         osum+=rem
+     num=num//10
+print("even:",ecount)
+print("Odd:",ocount)
+print("even sum:",esum)
+print("odd sum:",osum)
+
+#3. check given number is prime or not
+n=100
+i=1
+count=0
+while i<=n//2:
+    if n%i==0:
+        count+=1
+    i+=1
+if count==1:
+    print("Prime")
+else:
+    print("Not prime")
+  
+#4.prime numbers between 1-100
+n=1
+while n<=100:
+    num=n
+    i=1
+    count=0
+    while i<=num//2:
+        if num%i==0:
+            count+=1
+        i+=1
+    if count==1:
+        print(num,end=" ")
+    n=n+1
+#5.WAP to accept start and stop value and print between numbers
+start=int(input("Enter the start value:"))
+end=int(input("Enter the end value:"))
+i=1
+while i<=end:
+    if i>=start:
+        print(i)
+    i+=1
+
+#6.WAP to accept number and print number of factors
+n=int(input("Enter the number:"))
+i=1
+count=0
+while i<=n:
+    if n%i==0:
+        count+=1
+    i+=1
+print(f"Number of factors of {n} is {count}")
+
+#7.WAP to print reverse of a given number
+num=int(input("Enter the number:"))
+reverse_num=0
+while num!=0:
+    rem=num%10
+    reverse_num=reverse_num*10+rem
+    num//=10
+print(reverse_num)
+#8.WAP to print number of digits of a number given number
+num=int(input("Enter the number:"))
+c=0
+while num!=0:
+    rem=num%10
+    c+=1
+    num//=10
+print(c)
+  
+#9.WAP to print sum of first and last digits of a given number
+num=int(input("Enter the number:"))
+sum=0
+n=str(num)
+length=len(n)
+print(length)
+for i in range(1,length+1):
+    if i==1 and i==length+1:
+        sum+=i
+print(sum)
+
+#10.Check given number is amstrong or not
+num=int(input("Enter the number:"))
+sum=0
+n=str(num)
+length=len(n)
+temp=num
+while num>0:
+    rem=num%10
+    sum=sum+rem**length
+    num//=10
+if temp==sum:
+    print("Amstrong")
+else:
+    print("Not amstrong")
+
+#11.Check given number is strong or not
+num=int(input("Enter the number:"))
+sum=0
+temp=num
+while num>0:
+    rem=num%10
+    f=1
+    i=1
+    while i<=rem:
+        f=f*i
+        i+=1
+    sum+=f
+    num//=10
+print(sum)
+if temp==sum:
+    print("Strong")
+else:
+    print("weak")
+
+#String methods
+str="Hi hello 123 this is gnanu #$@."
+str1=str.lower()
+print(str1)
+d_c=0
+a_c=0
+v_c=0
+s_c=0
+sp_c=0
+for i in str1:
+    if i.isdigit():
+        d_c+=1
+    elif i=='a' or i=='e' or i=='i' or i=='o' or i=='u':
+        v_c+=1
+    elif i.isalpha():
+        a_c+=1
+    elif i==" ":
+        s_c+=1
+    else:
+        sp_c+=1
+        
+print("Number of digits:",d_c)
+print("Number of alphabets:",a_c+v_c)
+print("Number of vowels:",v_c)
+print("Number of spaces:",s_c)
+print(sp_c)
+
+print(str.endswith("."))
+print(str.startswith("H"))
+print(str.startswith("Hello"))
+    
